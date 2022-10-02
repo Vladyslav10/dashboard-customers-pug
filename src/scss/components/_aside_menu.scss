@@ -67,11 +67,11 @@
 	}
 
 	
-	&__list > li.active > .aside__img > iframe > svg path, polygon {
+	&__list > li.active > .aside__img svg path, polygon {
 			stroke: white;
 	}
 
-	&__list > li > .aside__img > iframe> svg path, polygon {
+	&__list > li > .aside__img svg path, polygon {
 			stroke: #9197B3;
 	} 
 
@@ -93,7 +93,11 @@
 		width: 24px;
 		height: 24px;
 		overflow: hidden;
-			margin: 0px 0.876rem 0px 0px;
+		margin: 0px 0.876rem 0px 0px;
+		& > * {
+			max-width: 100%;
+			max-height: 100%;
+		}
 	}
 
 	&__link {

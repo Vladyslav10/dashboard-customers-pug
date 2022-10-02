@@ -1,3 +1,4 @@
+include ../templates/_global_mixins.pug
 - 
 	nav_array = [
 			{
@@ -44,7 +45,7 @@
 			each el in nav_array
 				li 
 					.aside__img 
-						iframe(src=`../../images/sprite/${el.img}`, frameborder="0") 
+						iframe(src=`../../images/sprite/${el.img}`, frameborder="0")
 					a(href=`${el.href}`, class='aside__link')= el.name
 .aside__bottom 
 	.aside__avatar

@@ -1,0 +1,392 @@
+@import 'ScssHelpers/helpers_all';
+
+.main {
+	//min-height: 400px;
+	//min-width: 280px;
+	padding: 2.56rem 9rem 0px 4.50rem;
+	flex: 1 1 auto;
+	background-color: #FAFBFF;
+
+	&__back {
+		display: none;
+	}
+
+	&__title {
+		line-height: 150%;
+		font-size: 1.50rem;
+		margin: 0px 0px 2.16em 0px;
+	}
+
+	&__body {
+		padding: 1.750rem 0px 2.62rem 0px;
+		background-color: #fff;
+		border-radius: 1.88rem;
+		margin: 0px 0px 7rem 0px;
+	}
+
+	&__top {
+		font-size: 1.375rem;
+		padding: 0px 2.46em 0px 1.64em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0px 0px 1.90em 0px;
+	}
+
+	&__content-info {
+		&>* {
+			line-height: 150%;
+		}
+	}
+
+	&__choosen-element {
+		font-size: 1em;
+		font-weight: 600;
+		margin: 0px 0px 0.32em 0px;
+	}
+
+	&__members {
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: #16C098;
+	}
+
+	&__input {
+		max-width: 13.62rem;
+		position: relative;
+		cursor: pointer;
+		&::before {
+			content: url('../../images/sprite/search.svg');
+			position: absolute;
+			top: 5px;
+			left: 10px;
+		}
+
+		&>input {
+			display: flex;
+			align-items: center;
+			padding: 0.312rem 2.50rem;
+			background-color: #F9FBFF;
+			border-radius: 0.62rem;
+			color: #B5B7C0;
+			font-size: 0.750rem;
+			line-height: 150%;
+			min-height: 38px;
+			border: none;
+			&::placeholder {
+				color: #B5B7C0;
+			}
+		}
+	}
+
+	&__list {
+		margin: 0px 0px 2.26rem 0px;
+	}
+
+	&__user-info {
+		display: grid;
+		column-gap: 5px;
+		align-items: center;
+		grid-template-columns: minmax(80px, 167px) minmax(60px, 126px) minmax(60px, 151px) minmax(50px, 202px) minmax(40px, 125px) minmax(60px, 80px);
+		padding: 1.250rem 0px;
+		margin: 0px 2.750rem 0px 2.250rem;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #EEEEEE;
+		}
+
+		&>* {
+			font-weight: 500;
+			color: #292D32;
+			line-height: 150%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+
+	&__phone {
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__email {
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__user-info-headline {
+		margin: 0px 0px 0px 0px;
+		padding: 0px 2.750rem 0.875rem 2.250rem;
+
+		&>* {
+			color: #B5B7C0;
+			cursor: none;
+			text-decoration: none;
+			font-weight: 400;
+		}
+
+		&>.main__phone {
+			cursor: auto;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+		}
+
+		&>.main__email {
+			cursor: auto;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+		}
+	}
+
+	&__status {
+		justify-self: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.250rem;
+
+		&.active {
+			padding: 2px 18px;
+			color: #008767;
+			border: 1px solid #00B087;
+			background-color: rgba(22, 192, 152, 0.38);
+		}
+
+		&.inactive {
+			padding: 3px 12px;
+			color: #DF0404;
+			border: 1px solid #DF0404;
+			background-color: rgba(255, 197, 197, 1);
+		}
+	}
+
+	&__bottom {
+		padding: 0px 2.50rem 0px 2.38rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__pagination {
+		display: flex;
+		align-items: center;
+	}
+
+	&__pagination-arrow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #EEEEEE;
+		color: #404B52;
+		max-height: 24px;
+		background-color: #F5F5F5;
+		padding: 0.32rem 0.56rem;
+		font-size: 0.750rem;
+		border-radius: 4px;
+
+		&:first-child {
+			margin: 0px 0.56rem 0px 0px;
+		}
+
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+
+	&__pagination-items {
+		display: flex;
+		align-items: center;
+		&>* {
+			margin: 0px 0.56rem 0px 0px;
+		}
+	}
+
+	&__pagination-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #EEEEEE;
+		color: #404B52;
+		background-color: #F5F5F5;
+		padding: 0.32rem 0.56rem;
+		font-size: 0.750rem;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+
+		&.active {
+			background-color: #5932EA;
+			color: #FFFFFF;
+			border: 1px solid #5932EA;
+		}
+
+		&:hover {
+			background-color: #9175f7;
+			color: #FFFFFF;
+			border: 1px solid #5932EA;
+		}
+	}
+
+	&__pagination-info {
+		line-height: 150%;
+		color: #B5B7C0;
+	}
+}
+
+@media (max-width: 1200px) {
+
+	.main {
+		padding: 2.50rem 3.12rem;
+
+		&__title {
+			font-size: 1.36rem;
+		}
+
+		&__body {
+			padding: 1.750rem 0px 2.50rem 0px;
+		}
+
+		&__top {
+			font-size: 1.12rem;
+			padding: 0;
+			margin: 0px 1.12em 1.12em 1.12em;
+		}
+
+		&__user-info {
+			column-gap: 10px;
+			padding: 1.25rem 0.94rem;
+			margin: 0px 0px;
+		}
+
+		&__user-info-headline {
+			padding: 0px 0.94rem 14px 0.94rem;
+		}
+
+		&__bottom {
+			padding: 0px 0.94rem;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+
+	.main {
+		padding: 1.86rem 0.94rem;
+
+		&__title {
+			font-size: 1.250rem;
+		}
+
+		&__user-info {
+			column-gap: 10px;
+			grid-template-columns: minmax(80px, 110px) minmax(60px, 90px) minmax(60px, 110px) minmax(50px, 140px) minmax(40px, 100px) minmax(60px, 70px);
+		}
+
+		&__status {
+			&.active {
+				padding: 2px 12px;
+			}
+
+			&.inactive {
+				padding: 3px 7px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.main {
+		overflow: auto;
+		position: fixed;
+		top: 0;
+		transition: all 0.7s ease 0s;
+		right: -130%;
+		width: 100%;
+		height: 100%;
+
+		&__back {
+			display: block;
+			margin: 0px 0px 0.62rem 0px;
+			padding: 0.310rem 0.62rem;
+		}
+
+		&__bottom {
+			padding: 0px 0.94rem;
+			justify-content: center;
+		}
+
+		&__pagination-info {
+			display: none;
+		}
+	}
+
+	.main.show {
+		right: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.main {
+		padding: 1.86rem 0px;
+
+		&__back {
+			margin: 0px 0px 0.62rem 0.62rem;
+		}
+
+		&__top {
+			padding: 0px 0.62rem;
+		}
+
+		&__input {
+			max-width: 110px;
+			margin: 0px 0.62rem 0px 0px;
+
+			&::before {
+				top: 5px;
+				left: 4px;
+			}
+
+			&>input {
+				padding: 5px 30px;
+			}
+		}
+
+		&__user-info {
+			column-gap: 10px;
+			grid-template-columns: minmax(50px, 100px) minmax(50px, 65px) minmax(50px, 110px) minmax(50px, 140px) minmax(40px, 100px);
+		}
+
+		&__status {
+			display: none;
+
+			&.active {
+				padding: 2px 10px;
+			}
+
+			&.inactive {
+				padding: 3px 5px;
+			}
+		}
+	}
+}

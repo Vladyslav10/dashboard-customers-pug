@@ -1,0 +1,101 @@
+- 
+	users_array = [
+			{
+				name: 'Jane Cooper',
+				email: 'jane@microsoft.com',
+				phone: '(225) 555-0118',
+				status: 'Active',
+				country: 'United States',
+				company: 'Microsoft'
+			},
+			{
+				name: 'Floyd Miles',
+				email: 'floyd@yahoo.com',
+				phone: '(205) 555-0100',
+				status: 'Inactive',
+				country: 'Kiribati',
+				company: 'Yahoo'
+			},
+			{
+				name: 'Ronald Richards',
+				email: 'ronald@adobe.com',
+				phone: '(302) 555-0107',
+				status: 'Inactive',
+				country: 'Israel',
+				company: 'Adobe'
+			},
+			{
+				name: 'Marvin McKinney',
+				email: 'marvin@tesla.com',
+				phone: '(252) 555-0126',
+				status: 'Active',
+				country: 'Iran',
+				company: 'Tesla'
+			},
+			{
+				name: 'Jerome Bell',
+				email: 'jerome@google.com',
+				phone: '(629) 555-0129',
+				status: 'Active',
+				country: 'Réunion',
+				company: 'Google'
+			},
+			{
+				name: 'Kathryn Murphy',
+				email: 'kathryn@microsoft.com',
+				phone: '(406) 555-0120',
+				status: 'Active',
+				country: 'Curaçao',
+				company: 'Microsoft'
+			},
+			{
+				name: 'Jacob Jones',
+				email: 'jacob@yahoo.com',
+				phone: '(208) 555-0112',
+				status: 'Active',
+				country: 'Brazil',
+				company: 'Yahoo'
+			},
+			{
+				name: 'Kristin Watsons',
+				email: 'kristin@facebook.com',
+				phone: '(704) 555-0127',
+				status: 'Inactive',
+				country: 'Åland Islands',
+				company: 'Facebook'
+			},
+		];
+
+.main__content
+	button(class="main__back" type="button") back
+	h2.main__title Hello Evano 👋🏼,
+	.main__body
+		.main__top
+			.main__content-info
+				h3.main__choosen-element All Customers
+				p.main__members Active Members
+			.main__input
+				input(type="text" placeholder="Search")
+		.main__users
+			ul.main__list
+				li.main__user-info.main__user-info-headline
+					p.main__customer-name Customer Name
+					p.main__company Company
+					p.main__phone Phone Number
+					p.main__email Email
+					p.main__country Country
+					p.main__status Status
+				each user in users_array
+					li.main__user-info
+						p.main__customer-name= user.name
+						p.main__company= user.company
+						p.main__phone= user.phone
+						p.main__email= user.email
+						p.main__country= user.country
+						p(class=`main__status ${user.status.toLowerCase()}`)= user.status
+		.main__bottom
+			p.main__pagination-info Showing data 1 to 8 of 256K entries
+			.main__pagination
+				button.main__pagination-arrow.prev <
+				.main__pagination-items
+				button.main__pagination-arrow.next >

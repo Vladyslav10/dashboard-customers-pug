@@ -1,0 +1,54 @@
+- 
+	nav_array = [
+			{
+				href: '#',
+				name: 'Dashboard',
+				img: 'key-square.svg'
+			},
+			{
+				href: '#',
+				name: 'Product',
+				img: '3d-square.svg'
+			},
+			{
+				href: '#',
+				name: 'Customers',
+				img: 'user-square.svg'
+			},
+			{
+				href: '#',
+				name: 'Income',
+				img: 'wallet-money.svg'
+			},
+			{
+				href: '#',
+				name: 'Promote',
+				img: 'discount-shape.svg'
+			},
+			{
+				href: '#',
+				name: 'Help',
+				img: 'message-question.svg'
+			}
+		];
+
+
+.aside__top
+	.aside__logo
+		a(href="#")
+			img(src='../../images/sprite/logo.svg' alt='Dashboard logotype')
+	h1.aside__title Dashboard <span>v.01</span>
+.aside__body
+	nav.aside__navigation 
+		ul.aside__list
+			each el in nav_array
+				li 
+					.aside__img 
+						iframe(src=`../../images/sprite/${el.img}`, frameborder="0") 
+					a(href=`${el.href}`, class='aside__link')= el.name
+.aside__bottom 
+	.aside__avatar
+		img(src="../../images/user-photo.png", alt="user avatar")
+	.aside__user-info
+		p.aside__name Evano
+		p.aside__position Project Manager

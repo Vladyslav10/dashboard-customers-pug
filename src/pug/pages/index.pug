@@ -1,0 +1,12 @@
+extends ../layout/_layout
+
+block vars
+	//- include ../templates/_project_vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'IndexPage'};
+
+block content_block
+	.row
+		aside.aside 
+			include ../blocks/_aside_menu
+		main.main
+			include ../blocks/_main_content

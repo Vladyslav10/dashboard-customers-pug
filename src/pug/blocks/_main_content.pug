@@ -89,8 +89,8 @@
 					li.main__user-info
 						p.main__customer-name= user.name
 						p.main__company= user.company
-						p.main__phone= user.phone
-						p.main__email= user.email
+						a(href=`tel:${user.phone}`, class='main__phone')= user.phone
+						a(href=`mailto:${user.email}`, class='main__email')= user.email
 						p.main__country= user.country
 						p(class=`main__status ${user.status.toLowerCase()}`)= user.status
 		.main__bottom

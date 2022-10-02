@@ -35,18 +35,17 @@ const mainContent = () => {
 		}
 
 		for (let plength = beforePage; plength <= afterPage; plength += 1) {
-			// if (plength > pages) {
-			// continue;
-			// }
-			if (plength === 0) {
-				plength += 1;
+			if (plength <= pages) {
+				if (plength === 0) {
+					plength += 1;
+				}
+				if (curPage === plength) {
+					active = 'active';
+				} else {
+					active = '';
+				}
+				spanTag += `<span class="main__pagination-item ${active}">${plength}</span>`;
 			}
-			if (curPage === plength) {
-				active = 'active';
-			} else {
-				active = '';
-			}
-			spanTag += `<span class="main__pagination-item ${active}">${plength}</span>`;
 		}
 
 		if (curPage < pages - 1) {
@@ -59,7 +58,7 @@ const mainContent = () => {
 		paginationArea.innerHTML = spanTag;
 		return spanTag;
 	}
-
+	paginationArea.innerHTML = pagCreator(pages, curPage);
 	nextbtn.addEventListener('click', () => {
 		if (curPage === pages) {
 			curPage = 1;
@@ -79,7 +78,6 @@ const mainContent = () => {
 			pagCreator(pages, curPage);
 		}
 	});
-	paginationArea.innerHTML = pagCreator(pages, curPage);
 };
 
 export default mainContent;

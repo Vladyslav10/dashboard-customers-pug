@@ -67,11 +67,11 @@
 	}
 
 	
-	&__list > li.active > .aside__img svg path, polygon {
+	&__list > li.active > .aside__img > iframe svg path, polygon {
 			stroke: white;
 	}
 
-	&__list > li > .aside__img svg path, polygon {
+	&__list > li > .aside__img > iframe svg path, polygon {
 			stroke: #9197B3;
 	} 
 

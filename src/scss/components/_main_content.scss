@@ -196,6 +196,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		cursor: pointer;
 		border: 1px solid #EEEEEE;
 		color: #404B52;
 		max-height: 24px;
@@ -231,7 +232,6 @@
 		padding: 0.32rem 0.56rem;
 		font-size: 0.750rem;
 		border-radius: 4px;
-		cursor: pointer;
 		transition: all 0.3s ease 0s;
 
 		&.active {

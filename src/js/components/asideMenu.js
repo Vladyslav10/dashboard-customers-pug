@@ -23,6 +23,7 @@ const asideMenu = () => {
 			main.classList.remove('show');
 		});
 	}
+
 	links.forEach((el) => {
 		el.addEventListener('click', (e) => {
 			e.preventDefault();

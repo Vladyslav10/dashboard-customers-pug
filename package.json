@@ -2,8 +2,10 @@
   "author": "Glivera-team",
   "name": "glivera-webpack-template",
   "version": "1.0.0",
+	"homepage": "https://vladyslav10.github.io/dashboard-customers-pug.github.io/",
   "description": "Webpack 5, pug, scss, svg sprite template",
   "scripts": {
+    "deploy": "gh-pages -d build",
     "dev": "cross-env NODE_ENV=development webpack serve --config settings/webpack.dev.config.js --mode=development",
     "dev-build": "cross-env NODE_ENV=development webpack --config settings/webpack.dev.config.js --mode=development --watch",
     "build": "cross-env NODE_ENV=production webpack --config settings/webpack.prod.config.js --mode=production",
@@ -60,6 +62,7 @@
   "dependencies": {
     "critical-css-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0",
     "gsap": "^3.9.1",
     "html-webpack-plugin": "^5.5.0",
     "ismobilejs": "^1.1.1",
@@ -85,7 +88,7 @@
     "pug",
     "svg sprite "
   ],
-	"prettier": {
+  "prettier": {
     "singleQuote": true,
     "semi": true,
     "trailingComma": "none"

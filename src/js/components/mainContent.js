@@ -16,9 +16,9 @@ const mainContent = () => {
 		let afterPage = curPage + 1;
 
 		if (curPage > 2) {
-			spanTag += '<span class="main__pagination-item">1</span>';
+			spanTag += '<li><a class="main__pagination-item" href="#">1</a></li>';
 			if (curPage > 3) {
-				spanTag += '<span class="dots">...</span>';
+				spanTag += '<li class="dots">...</li>';
 			}
 		}
 
@@ -44,21 +44,26 @@ const mainContent = () => {
 				} else {
 					active = '';
 				}
-				spanTag += `<span class="main__pagination-item ${active}">${plength}</span>`;
+				spanTag += `<li><a class="main__pagination-item ${active}" href="#">${plength}</a></li>`;
 			}
 		}
 
 		if (curPage < pages - 1) {
 			if (curPage < pages - 2) {
-				spanTag += '<span class="dots">...</span>';
+				spanTag += '<li class="dots">...</li>';
 			}
-			spanTag += `<span class="main__pagination-item">${pages}</span>`;
+			spanTag += `<li><a href="#" class="main__pagination-item">${pages}</a></li>`;
 		}
 
 		paginationArea.innerHTML = spanTag;
 		return spanTag;
 	}
 	paginationArea.innerHTML = pagCreator(pages, curPage);
+	document.querySelectorAll('.main__pagination-item').forEach((el) => {
+		el.addEventListener('click', (e) => {
+			e.preventDefault();
+		});
+	});
 	nextbtn.addEventListener('click', () => {
 		if (curPage === pages) {
 			curPage = 1;

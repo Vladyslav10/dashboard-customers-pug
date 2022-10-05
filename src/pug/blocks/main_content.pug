@@ -71,31 +71,31 @@
 	h2.main__title Hello Evano 👋🏼,
 	.main__body
 		.main__top
-			.main__content-info
-				h3.main__choosen-element All Customers
+			.main__text
+				h3.main__customers All Customers
 				p.main__members Active Members
 			.main__input
 				input(type="text" placeholder="Search")
 		.main__users
 			ul.main__list
-				li.main__user-info.main__user-info-headline
-					p.main__customer-name Customer Name
+				li.main__user.main__user--headline
+					p.main__name Customer Name
 					p.main__company Company
 					p.main__phone Phone Number
 					p.main__email Email
 					p.main__country Country
 					p.main__status Status
 				each user in users_array
-					li.main__user-info
-						p.main__customer-name= user.name
+					li.main__user
+						p.main__name= user.name
 						p.main__company= user.company
 						a(href=`tel:${user.phone}`, class='main__phone')= user.phone
 						a(href=`mailto:${user.email}`, class='main__email')= user.email
 						p.main__country= user.country
-						p(class=`main__status ${user.status.toLowerCase()}`)= user.status
+						p(class=`main__status main__status--${user.status.toLowerCase()}`)= user.status
 		.main__bottom
-			p.main__pagination-info Showing data 1 to 8 of 256K entries
+			p.main__number Showing data 1 to 8 of 256K entries
 			.main__pagination
 				button.main__pagination-arrow.prev <
-				.main__pagination-items
+				ul.main__pagination-items
 				button.main__pagination-arrow.next >

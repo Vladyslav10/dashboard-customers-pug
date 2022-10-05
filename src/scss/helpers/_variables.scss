@@ -13,6 +13,9 @@ $color_link_base:#4aa3df;
 $body_bg: $white;
 //---------------------------------------------colors###
 
+$color_status_active: #008767;
+$color_status_inactive: #DF0404;
+
 //---------------------------------------------z-index
 $z-index: (
 	popup : 101,
@@ -31,9 +34,10 @@ $gl_radius:.5rem;
 //---------------------------------------------global values###
 
 //---------------------------------------------media points
+$point_big: 1440px;
 $point_1: 1200px;
 $point_2: 1024px;
-$point_3: 1023px;
+$point_3: 992px;
 $point_4: 768px;
 $point_5: 640px;
 $point_6: 480px;

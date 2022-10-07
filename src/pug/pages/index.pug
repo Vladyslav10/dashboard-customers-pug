@@ -5,8 +5,9 @@ block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'IndexPage'};
 
 block content_block
-	.row
-		aside.aside 
-			include ../blocks/aside_menu
-		main.main
-			include ../blocks/main_content
+	.container
+		.row
+			aside.aside 
+				include ../blocks/aside_menu
+			main.main
+				include ../blocks/main_content

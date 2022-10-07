@@ -3,40 +3,40 @@
 			{
 				href: '#',
 				name: 'Dashboard',
-				img: 'key-square.svg'
+				img: 'key-square'
 			},
 			{
 				href: '#',
 				name: 'Product',
-				img: '3d-square.svg'
+				img: '3d-square'
 			},
 			{
 				href: '#',
 				name: 'Customers',
-				img: 'user-square.svg'
+				img: 'user-square'
 			},
 			{
 				href: '#',
 				name: 'Income',
-				img: 'wallet-money.svg'
+				img: 'wallet-money'
 			},
 			{
 				href: '#',
 				name: 'Promote',
-				img: 'discount-shape.svg'
+				img: 'discount-shape'
 			},
 			{
 				href: '#',
 				name: 'Help',
-				img: 'message-question.svg'
+				img: 'message-question'
 			}
 		];
-
-
+.menu_trigger.menuTrigger
+	span.menu_trigger_decor
 .aside__top
 	.aside__logo
 		a(href="#")
-			img(src='../../images/sprite/logo.svg' alt='Dashboard logotype')
+			+icon('logo')
 	h1.aside__title Dashboard <span>v.01</span>
 .aside__body
 	nav.aside__navigation 
@@ -44,7 +44,7 @@
 			each el in nav_array
 				li 
 					.aside__img 
-						iframe(src=`../../images/sprite/${el.img}`, frameborder="0")
+						+icon(el.img)
 					a(href=`${el.href}`, class='aside__link')= el.name
 .aside__bottom 
 	.aside__avatar

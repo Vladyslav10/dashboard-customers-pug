@@ -1,37 +1,31 @@
 @import "ScssHelpers/helpers_all";
 
-.row {
-	display: flex;
-	min-height: 100vh;
+.container {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 0px 15px;
 }
-/*
-.aside {
-	&__list > li.active > .aside__img > iframe svg path,
-	polygon {
-		stroke: white;
-	}
 
-	&__list > li > .aside__img > iframe svg path,
-	polygon {
-		stroke: #9197b3;
-	}
+.row {
+	//@include flex_block(row, nowrap);
+	display: flex;
+	//@extend %global_flex_block_e;
+	min-height: 100%;
 }
-*/
 .aside {
-	padding: 2.2rem 1.7rem 4.7rem 1.7rem;
-	flex: 0 0 21.25%;
-	width: 30%;
+	height: auto;
+	padding: 2.2rem 1.7rem 4.7rem 0rem;
+	min-width: 19.1rem;
 	display: flex;
 	flex-direction: column;
 	@include bp($point_1, max) {
-		padding: 2.5rem 1.7rem;
+		padding: 2.5rem 1.7rem 2.5rem 0rem;
 	}
 	@include bp($point_3, max) {
 		padding: 1.9rem 1.5rem;
-	}
-	@include bp($point_4, max) {
-		position: relative;
-		flex: 1 1 auto;
+		position: fixed;
+		flex: 1 1 30%;
+		z-index: 5;
 		background-color: #fafbff;
 		left: 0;
 		transition: all 0.7s ease 0s;
@@ -53,7 +47,7 @@
 	margin: 0px 0.5rem 0px 0px;
 	width: 2.3rem;
 	height: 2.3rem;
-	& > a > img {
+	& > a > svg {
 		max-width: 100%;
 		max-height: 100%;
 		overflow: hidden;
@@ -67,7 +61,7 @@
 		font-size: 0.6rem;
 		color: #838383;
 	}
-	@include bp($point_3, max) {
+	@include bp($point_1, max) {
 		& > span {
 			display: none;
 		}
@@ -101,13 +95,26 @@
 		color: #fafbff;
 	}
 }
+.aside__list > li.active > .aside__img > svg > use {
+	stroke: white;
+}
+.aside__list > li > .aside__img > svg > use {
+	stroke: #9197b3;
+}
+svg > path {
+	stroke: inherit;
+}
 .aside__list > li:not(:first-child) {
 	&::after {
-		content: url("../../images/sprite/arrow-right.svg");
+		//url("../../images/icons/sprite_icons/arrow-right.svg")
+		content: url("../../images/icons/sprite_icons/arrow-right.svg");
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
 		right: 0.9rem;
+		display: block;
+		width: 1rem;
+		height: 1rem;
 	}
 }
 .aside__list > li:not(:last-child) {

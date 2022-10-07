@@ -7,8 +7,7 @@ const asideMenu = () => {
 	const links = document.querySelectorAll('.aside__link');
 	const btnBack = document.querySelector('.main__back');
 	const w = window.innerWidth;
-	console.log(w);
-	if (w > 769) {
+	if (w > 992) {
 		asideItems[2].classList.add('active');
 	} else {
 		asideItems.forEach((el) => {

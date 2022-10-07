@@ -74,25 +74,24 @@
 			.main__text
 				h3.main__customers All Customers
 				p.main__members Active Members
-			.main__input
+			form.main__form
 				input(type="text" placeholder="Search")
 		.main__users
-			ul.main__list
-				li.main__user.main__user--headline
-					p.main__name Customer Name
-					p.main__company Company
-					p.main__phone Phone Number
-					p.main__email Email
-					p.main__country Country
-					p.main__status Status
-				each user in users_array
-					li.main__user
-						p.main__name= user.name
-						p.main__company= user.company
-						a(href=`tel:${user.phone}`, class='main__phone')= user.phone
-						a(href=`mailto:${user.email}`, class='main__email')= user.email
-						p.main__country= user.country
-						p(class=`main__status main__status--${user.status.toLowerCase()}`)= user.status
+			.main__user.main__user--headline
+				.main__name Customer Name
+				.main__company Company
+				.main__phone Phone Number
+				.main__email Email
+				.main__country Country
+				.main__status Status
+			each user in users_array
+				.main__user
+					.main__name= user.name
+					.main__company= user.company
+					a(href=`tel:${user.phone}`, class='main__phone')= user.phone
+					a(href=`mailto:${user.email}`, class='main__email')= user.email
+					.main__country= user.country
+					div(class=`main__status main__status--${user.status.toLowerCase()}`)= user.status
 		.main__bottom
 			p.main__number Showing data 1 to 8 of 256K entries
 			.main__pagination

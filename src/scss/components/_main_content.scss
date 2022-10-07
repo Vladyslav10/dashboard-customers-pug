@@ -1,44 +1,14 @@
 @import "ScssHelpers/helpers_all";
-/*
-@media (max-width: 992px) {
-	.main {
-		&__user-info {
-			grid-template-columns:
-				minmax(80px, 110px) minmax(60px, 90px) minmax(60px, 110px) minmax(50px, 140px) minmax(40px, 100px)
-				minmax(60px, 70px);
-		}
-	}
-}
-@media (max-width: 480px) {
-	.main {
 
-		&__user-info {
-			grid-template-columns: minmax(50px, 100px) minmax(50px, 65px) minmax(50px, 110px) minmax(50px, 140px) minmax(
-					40px,
-					100px
-				);
-		}
-
-		&__status {
-			display: none;
-		}
-	}
-}
-*/
 .main {
 	padding: 2.6rem 9rem 0px 4.5rem;
-	flex: 1 1 auto;
+	max-width: calc(90rem - 19.1rem);
 	background-color: #fafbff;
-	@include bp($point_big, min) {
-		padding: 0;
-	}
 	@include bp($point_1, max) {
-		padding: 2.5rem 3.1rem;
+		padding: 2.5rem 0rem 2.5rem 0.9rem;
 	}
 	@include bp($point_3, max) {
 		padding: 1.9rem 0.9rem;
-	}
-	@include bp($point_4, max) {
 		overflow: auto;
 		position: fixed;
 		top: 0;
@@ -46,23 +16,15 @@
 		right: -130%;
 		width: 100%;
 		height: 100%;
-		&.show {
-			right: 0;
-		}
+		right: 0;
 	}
 	@include bp($point_6, max) {
 		padding: 1.8rem 0px;
 	}
 }
-.main__content {
-	@include bp($point_big, min) {
-		max-width: 57.4rem;
-		margin: 0 auto;
-	}
-}
 .main__back {
 	display: none;
-	@include bp($point_4, max) {
+	@include bp($point_3, max) {
 		display: block;
 		margin: 0px 0px 0.6rem 0.9rem;
 		padding: 0.3rem 0.6rem;
@@ -88,6 +50,7 @@
 	background-color: #fff;
 	border-radius: 1.88rem;
 	margin: 0px 0px 7rem 0px;
+	overflow: hidden;
 	@include bp($point_1, max) {
 		padding: 1.7rem 0.9rem 2.5rem 0.9rem;
 	}
@@ -117,8 +80,9 @@
 	font-weight: 400;
 	color: #16c098;
 }
-.main__input {
+.main__form {
 	max-width: 13.2rem;
+	/*
 	position: relative;
 	cursor: pointer;
 	&::before {
@@ -127,6 +91,7 @@
 		top: 0.3rem;
 		left: 0.2rem;
 	}
+	*/
 	& > input {
 		display: flex;
 		align-items: center;
@@ -149,16 +114,19 @@
 		}
 	}
 }
-.main__list {
+.main__users {
 	margin: 0px 0px 2.3rem 0px;
+	@include bp($point_4, max) {
+		overflow-x: auto;
+	}
 }
 .main__user {
 	display: grid;
-	column-gap: 0.3rem;
+	column-gap: 0.2rem;
 	align-items: center;
 	grid-template-columns:
-		minmax(80px, 167px) minmax(60px, 126px) minmax(60px, 151px) minmax(50px, 202px) minmax(40px, 125px)
-		minmax(60px, 80px);
+		minmax(7.8rem, 9.5rem) minmax(4.7rem, 7.8rem) minmax(6.9rem, 9.4rem) minmax(8rem, 11.9rem) minmax(5.9rem, 8.4rem)
+		minmax(3.7rem, 1fr);
 	padding: 1.2rem 0px;
 	position: relative;
 
@@ -175,39 +143,10 @@
 		font-weight: 500;
 		color: #292d32;
 		line-height: 150%;
-		overflow: hidden;
 		white-space: nowrap;
-		text-overflow: ellipsis;
 	}
 	@include bp($point_1, max) {
-		column-gap: 0.6rem;
-		margin: 0px -0.9rem 0px -0.9rem;
-		padding: 1.2rem 0.9rem 1.2rem 0.9rem;
-	}
-}
-.main__user--headline {
-	margin: 0px -2.7rem 0px -2.2rem;
-	padding: 0px 2.7rem 0.9rem 2.2rem;
-	& > * {
-		color: #b5b7c0;
-		text-decoration: none;
-		font-weight: 400;
-	}
-	& > .main__phone {
-		cursor: auto;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	& > .main__email {
-		cursor: auto;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	@include bp($point_1, max) {
+		column-gap: 0.4rem;
 		margin: 0px -0.9rem 0px -0.9rem;
 		padding: 1.2rem 0.9rem 1.2rem 0.9rem;
 	}
@@ -224,6 +163,23 @@
 
 	&:hover {
 		text-decoration: underline;
+	}
+}
+.main__user--headline {
+	margin: 0px -2.7rem 0px -2.2rem;
+	padding: 0px 2.7rem 0.9rem 2.2rem;
+	& > * {
+		color: #b5b7c0;
+		font-weight: 400;
+		cursor: auto;
+	}
+
+	& > *:hover {
+		text-decoration: none;
+	}
+	@include bp($point_1, max) {
+		margin: 0px -0.9rem 0px -0.9rem;
+		padding: 1.2rem 0.9rem 1.2rem 0.9rem;
 	}
 }
 .main__status {

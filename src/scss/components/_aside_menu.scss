@@ -7,23 +7,22 @@
 }
 
 .row {
-	//@include flex_block(row, nowrap);
-	display: flex;
-	//@extend %global_flex_block_e;
-	min-height: 100%;
+	@include flex_block(row, nowrap, flex-start, stretch);
+	height: 100%;
 }
 .aside {
 	height: auto;
 	padding: 2.2rem 1.7rem 4.7rem 0rem;
 	min-width: 19.1rem;
-	display: flex;
-	flex-direction: column;
+	@include flex_block(column, nowrap, flex-start, stretch);
 	@include bp($point_1, max) {
 		padding: 2.5rem 1.7rem 2.5rem 0rem;
 	}
 	@include bp($point_3, max) {
 		padding: 1.9rem 1.5rem;
 		position: fixed;
+		overflow: auto;
+		height: 100vh;
 		flex: 1 1 30%;
 		z-index: 5;
 		background-color: #fafbff;
@@ -35,8 +34,7 @@
 	}
 }
 .aside__top {
-	display: flex;
-	align-items: center;
+	@include flex_block(row,  wrap, start, center, flex-start); 
 	font-size: 1.6rem;
 	margin: 0px 0px 2em 0px;
 	@include bp($point_3, max) {
@@ -81,8 +79,7 @@
 	color: #fff;
 }
 .aside__list > li {
-	display: flex;
-	align-items: center;
+	@include flex_block(row, nowrap, start, center, flex-start);
 	padding: 0.7rem;
 	cursor: pointer;
 	border-radius: 0.5rem;
@@ -94,28 +91,25 @@
 	&:hover > .aside__link {
 		color: #fafbff;
 	}
+	&:first-child > svg {
+		display: none;
+	}
 }
-.aside__list > li.active > .aside__img > svg > use {
-	stroke: white;
+.aside__list > li.active > .aside__img > svg use{
+	stroke: #ffffff;
+	fill: #ffffff;
 }
 .aside__list > li > .aside__img > svg > use {
 	stroke: #9197b3;
+	fill: #9197b3;
 }
-svg > path {
-	stroke: inherit;
-}
-.aside__list > li:not(:first-child) {
-	&::after {
-		//url("../../images/icons/sprite_icons/arrow-right.svg")
-		content: url("../../images/icons/sprite_icons/arrow-right.svg");
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 0.9rem;
-		display: block;
-		width: 1rem;
-		height: 1rem;
-	}
+.aside__list > li > svg {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0.9rem;
+	width: 1rem;
+	height: 1rem;
 }
 .aside__list > li:not(:last-child) {
 	margin: 0px 0px 1.1rem 0px;
@@ -132,14 +126,14 @@ svg > path {
 }
 .aside__link {
 	color: #9197b3;
+	font-weight: 500;
 	&:hover {
 		color: inherit;
 		text-decoration: underline;
 	}
 }
 .aside__bottom {
-	display: flex;
-	align-items: center;
+	@include flex_block(row, nowrap, start, center, flex-start);
 }
 .aside__avatar {
 	max-width: 2.6rem;

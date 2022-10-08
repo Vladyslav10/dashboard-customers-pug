@@ -1,7 +1,7 @@
 @import "ScssHelpers/helpers_all";
 
 .main {
-	padding: 2.6rem 9rem 0px 4.5rem;
+	padding: 2.6rem 7.5rem 0px 4.5rem;
 	max-width: calc(90rem - 19.1rem);
 	background-color: #fafbff;
 	@include bp($point_1, max) {
@@ -37,6 +37,7 @@
 .main__title {
 	line-height: 150%;
 	font-size: 1.5rem;
+	font-weight: 500;
 	margin: 0px 0px 2.2em 0.9rem;
 	@include bp($point_1, max) {
 		font-size: 1.4rem;
@@ -57,9 +58,7 @@
 }
 .main__top {
 	font-size: 1.4rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@include flex_block(row, nowrap, space-between, center, flex-start);
 	margin: 0px 0px 0.9rem 0px;
 	@include bp($point_1, max) {
 		font-size: 1.1rem;
@@ -82,50 +81,52 @@
 }
 .main__form {
 	max-width: 13.2rem;
-	/*
+}
+.form_input__field {
+	max-height: 2.4rem;
 	position: relative;
-	cursor: pointer;
-	&::before {
-		content: url("../../images/sprite/search.svg");
-		position: absolute;
-		top: 0.3rem;
-		left: 0.2rem;
-	}
-	*/
-	& > input {
-		display: flex;
-		align-items: center;
-		padding: 0.3rem 1.8rem;
-		background-color: #f9fbff;
-		border-radius: 0.6rem;
+}
+.form_input__element {
+	@include flex_block(row, nowrap, start, center, flex-start);
+	padding: 0.3rem 1.8rem;
+	background-color: #f9fbff;
+	border-radius: 0.6rem;
+	color: #b5b7c0;
+	font-size: 0.7rem;
+	line-height: 150%;
+	max-height: 2.4rem;
+	border: none;
+	&::placeholder {
 		color: #b5b7c0;
-		font-size: 0.7rem;
-		line-height: 150%;
-		min-height: 2.4rem;
-		border: none;
-		&::placeholder {
-			color: #b5b7c0;
-		}
 	}
 	@include bp($point_1, max) {
-		& > input {
-			max-width: 8.8rem;
-			padding: 0.3rem 1rem 0.3rem 1.8rem;
-		}
+		max-width: 8.8rem;
+		padding: 0.3rem 1rem 0.3rem 1.8rem;
+	}
+}
+.main__button {
+	@extend %btn_size_1;
+	position: absolute;
+	top: 0.3rem;
+	left: 0.2rem;
+	cursor: pointer;
+	& > svg {
+		max-width: 100%;
+		max-height: 100%;
+		overflow: hidden;
 	}
 }
 .main__users {
 	margin: 0px 0px 2.3rem 0px;
-	@include bp($point_4, max) {
+	@include bp($point_2, max) {
 		overflow-x: auto;
 	}
 }
 .main__user {
 	display: grid;
 	column-gap: 0.2rem;
-	align-items: center;
 	grid-template-columns:
-		minmax(7.8rem, 9.5rem) minmax(4.7rem, 7.8rem) minmax(6.9rem, 9.4rem) minmax(8rem, 11.9rem) minmax(5.9rem, 8.4rem)
+		minmax(7.8rem, 9.5rem) minmax(4.7rem, 7.8rem) minmax(6.9rem, 9.4rem) minmax(10.2rem, 11.9rem) minmax(6.1rem, 8.4rem)
 		minmax(3.7rem, 1fr);
 	padding: 1.2rem 0px;
 	position: relative;
@@ -144,23 +145,26 @@
 		color: #292d32;
 		line-height: 150%;
 		white-space: nowrap;
+		@include bp($point_2, max) {
+			//font-size: ;
+		}
 	}
 	@include bp($point_1, max) {
-		column-gap: 0.4rem;
+		column-gap: 0.2rem;
 		margin: 0px -0.9rem 0px -0.9rem;
 		padding: 1.2rem 0.9rem 1.2rem 0.9rem;
 	}
 }
 .main__phone {
 	cursor: pointer;
-
+	display: inline-block;
 	&:hover {
 		text-decoration: underline;
 	}
 }
 .main__email {
 	cursor: pointer;
-
+	display: inline-block;
 	&:hover {
 		text-decoration: underline;
 	}
@@ -184,40 +188,26 @@
 }
 .main__status {
 	justify-self: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flex_block(row, nowrap, center, center, flex-start);
+	width: 100%;
+	flex: 1 1 auto;
 	border-radius: 0.2rem;
 }
 .main__status--active {
-	padding: 0.1rem 1.1rem;
+	padding: 0.1rem 0.1rem;
 	color: $color_status_active;
 	border: 1px solid $color_status_active;
 	background-color: rgba(22, 192, 152, 0.38);
-	@include bp($point_3, max) {
-		padding: 0.1rem 0.7rem;
-	}
-	@include bp($point_6, max) {
-		padding: 0.1rem 0.6rem;
-	}
 }
 .main__status--inactive {
-	padding: 3px 12px;
+	padding: 0.2rem 0.1rem;
 	color: $color_status_inactive;
 	border: 1px solid $color_status_inactive;
 	background-color: rgba(255, 197, 197, 1);
-	@include bp($point_3, max) {
-		padding: 0.2rem 0.3rem;
-	}
-	@include bp($point_6, max) {
-		padding: 0.2rem 0.3rem;
-	}
 }
 .main__bottom {
 	padding: 0px 2.5rem 0px 2.4rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@include flex_block(row, nowrap, space-between, center, flex-start);
 	@include bp($point_1, max) {
 		padding: 0px 0.9rem;
 	}
@@ -228,19 +218,17 @@
 }
 .main__number {
 	line-height: 150%;
+	font-weight: 500;
 	color: #b5b7c0;
 	@include bp($point_4, max) {
 		display: none;
 	}
 }
 .main__pagination {
-	display: flex;
-	align-items: center;
+	@include flex_block(row, nowrap, start, center, flex-start);
 }
 .main__pagination-arrow {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex_block(row, nowrap, center, center, flex-start);
 	cursor: pointer;
 	border: 1px solid #eeeeee;
 	color: #404b52;
@@ -259,19 +247,17 @@
 	}
 }
 .main__pagination-items {
-	display: flex;
-	align-items: center;
+	@include flex_block(row, nowrap, start, center, flex-start);
 	& > * {
 		margin: 0px 0.6rem 0px 0px;
 	}
 }
 .main__pagination-item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex_block(row, nowrap, center, center, flex-start);
 	border: 1px solid #eeeeee;
 	color: #404b52;
 	background-color: #f5f5f5;
+	font-weight: 500;
 	padding: 0.3rem 0.6rem;
 	font-size: 0.7rem;
 	border-radius: 0.3rem;

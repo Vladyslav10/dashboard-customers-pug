@@ -31,11 +31,12 @@
 
 //size extends
 %btn_size_1 {
-	height: 4rem;
-	padding: 0 1.2rem;
+	height: 1.5rem;
+	width: 1.5rem;
+	padding: 0;
 
-	line-height: 4rem;
+	line-height: 0rem;
 	font-size: 1.6rem;
 
-	border-radius: $gl_radius;
+	border-radius: none;
 }

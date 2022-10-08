@@ -75,7 +75,9 @@
 				h3.main__customers All Customers
 				p.main__members Active Members
 			form.main__form
-				input(type="text" placeholder="Search")
+				+form_input({type: 'text',label: '',placeholder: 'Search',value: '',id: 'input_1',})
+					button(type='submit', class='main__button') 
+						+icon('search')
 		.main__users
 			.main__user.main__user--headline
 				.main__name Customer Name

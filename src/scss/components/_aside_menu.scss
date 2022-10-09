@@ -5,7 +5,9 @@
 	margin: 0 auto;
 	padding: 0px 15px;
 }
-
+body.menu_open .aside {
+	left: 0;
+}
 .row {
 	@include flex_block(row, nowrap, flex-start, stretch);
 	height: 100%;
@@ -24,13 +26,10 @@
 		overflow: auto;
 		height: 100vh;
 		flex: 1 1 30%;
-		z-index: 5;
+		z-index: 1;
 		background-color: #fafbff;
-		left: 0;
+		left: -130%;
 		transition: all 0.7s ease 0s;
-		&.hidden {
-			left: -130%;
-		}
 	}
 }
 .aside__top {

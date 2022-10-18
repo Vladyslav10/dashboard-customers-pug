@@ -40,10 +40,10 @@
 	nav.aside__navigation 
 		ul.aside__list
 			each el in nav_array
-				li 
+				li.aside__item
 					.aside__img 
 						+icon(el.img)
-					a(href=`${el.href}`, class='aside__link')= el.name
+					a.aside__link(href=`${el.href}`)= el.name
 					+icon('arrow-right')
 .aside__bottom 
 	.aside__avatar

@@ -21,9 +21,9 @@ const asideMenu = () => {
 		}
 	});
 	if (w > 992) {
-		asideItems[2].classList.add('active');
+		asideItems[2].classList.add('aside__item-active');
 	} else {
-		asideItems[2].classList.add('active');
+		asideItems[2].classList.add('aside__item-active');
 		asideItems.forEach((el) => {
 			el.addEventListener('click', (e) => {
 				const curEl = el;
@@ -43,8 +43,8 @@ const asideMenu = () => {
 
 	// asideItems.forEach((el) => {
 	// 	el.addEventListener('click', (e) => {
-	// 		asideItems.forEach((el) => el.classList.remove('active'));
-	// 		el.classList.add('active');
+	// 		asideItems.forEach((el) => el.classList.remove('aside__item-active'));
+	// 		el.classList.add('aside__item-active');
 	// 	});
 	// });
 };

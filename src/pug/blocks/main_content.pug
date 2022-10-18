@@ -91,8 +91,8 @@
 				.main__user
 					.main__name= user.name
 					.main__company= user.company
-					a(href=`tel:${user.phone}`, class='main__phone')= user.phone
-					a(href=`mailto:${user.email}`, class='main__email')= user.email
+					a.main__phone(href=`tel:${user.phone}`)= user.phone
+					a.main__email(href=`mailto:${user.email}`)= user.email
 					.main__country= user.country
 					div(class=`main__status main__status--${user.status.toLowerCase()}`)= user.status
 		.main__bottom

@@ -1,47 +1,54 @@
 @import "ScssHelpers/helpers_all";
 
 .container {
-	max-width: 90rem;
+	max-width: 92rem;
 	margin: 0 auto;
-	padding: 0px 15px;
+	padding: 0 .9rem;
 }
+
 body.menu_open .aside {
-	left: 0;
+	transform: translate(0%, 0)
 }
+
 .row {
 	@include flex_block(row, nowrap, flex-start, stretch);
 	height: 100%;
 }
+
 .aside {
 	height: auto;
 	padding: 2.2rem 1.7rem 4.7rem 0rem;
 	min-width: 19.1rem;
 	@include flex_block(column, nowrap, flex-start, stretch);
-	@include bp($point_1, max) {
+	@include bp($point_1) {
 		padding: 2.5rem 1.7rem 2.5rem 0rem;
 	}
-	@include bp($point_3, max) {
-		padding: 1.9rem 1.5rem;
+	@include bp($point_3) {
 		position: fixed;
-		overflow: auto;
+		top: 0;
+		left: 0;
+		transform: translate(-200%, 0);
+		z-index: 1;
 		height: 100vh;
 		flex: 1 1 30%;
-		z-index: 1;
-		background-color: #fafbff;
-		left: -130%;
-		transition: all 0.7s ease 0s;
+		background-color: $color_light;
+		padding: 1.9rem 1.5rem;
+		overflow: auto;
+		transition: all .7s ease 0s;
 	}
 }
+
 .aside__top {
-	@include flex_block(row,  wrap, start, center, flex-start); 
+	@include flex_block(row, wrap, start, center, flex-start);
 	font-size: 1.6rem;
-	margin: 0px 0px 2em 0px;
-	@include bp($point_3, max) {
+	margin: 0 0 2em 0;
+	@include bp($point_3) {
 		font-size: 1.2rem;
 	}
 }
+
 .aside__logo {
-	margin: 0px 0.5rem 0px 0px;
+	margin: 0 .5rem 0 0;
 	width: 2.3rem;
 	height: 2.3rem;
 	& > a > svg {
@@ -50,110 +57,123 @@ body.menu_open .aside {
 		overflow: hidden;
 	}
 }
+
 .aside__title {
 	font-weight: 600;
 	& > span {
 		display: inline-block;
-		margin: 0px 0.1rem 0px 0px;
-		font-size: 0.6rem;
+		margin: 0 .1rem 0 0;
+		font-size: .6rem;
 		color: #838383;
 	}
-	@include bp($point_1, max) {
+	@include bp($point_1) {
 		& > span {
 			display: none;
 		}
 	}
 }
+
 .aside__body {
 	flex: 1 1 auto;
 }
+
 .aside__navigation {
-	font-size: 0.9rem;
-	margin: 0px 0px 1.6rem 0px;
+	font-size: .9rem;
+	margin: 0 0 1.6rem 0;
 }
-.aside__list > li.active {
+
+.aside__item-active {
 	background-color: #5932ea;
 }
-.aside__list > li.active > .aside__link {
-	color: #fff;
+
+.aside__item-active > .aside__link {
+	color: $white;
 }
-.aside__list > li {
-	@include flex_block(row, nowrap, start, center, flex-start);
-	padding: 0.7rem;
-	cursor: pointer;
-	border-radius: 0.5rem;
+
+.aside__item {
+	border-radius: .5rem;	
 	position: relative;
-	transition: all 0.3s ease 0s;
+	transition: all .3s ease 0s;
 	&:hover {
 		background-color: #8362fd;
 	}
 	&:hover > .aside__link {
-		color: #fafbff;
+		color: $color_light;
+		text-decoration: none;
 	}
 	&:first-child > svg {
 		display: none;
 	}
 }
-.aside__list > li.active > .aside__img > svg use{
-	stroke: #ffffff;
-	fill: #ffffff;
+
+.aside__item > .aside__img {
+	stroke: $color_gray;
 }
-.aside__list > li > .aside__img > svg > use {
-	stroke: #9197b3;
-	fill: #9197b3;
+
+.aside__item:hover > .aside__img {
+	stroke: $white;
 }
-.aside__list > li > svg {
+
+.aside__item > svg {
 	position: absolute;
 	top: 50%;
+	right: .9rem;
 	transform: translateY(-50%);
-	right: 0.9rem;
 	width: 1rem;
 	height: 1rem;
 }
-.aside__list > li:not(:last-child) {
-	margin: 0px 0px 1.1rem 0px;
+
+.aside__item:not(:last-child) {
+	margin: 0 0 1.1rem 0;
 }
+
 .aside__img {
+	position: absolute;
+	top: 50%;
+	left: .7rem;
+	transform: translate(0, -50%);
 	width: 1.5rem;
 	height: 1.5rem;
-	margin: 0px 0.9rem 0px 0px;
 	& > * {
 		max-width: 100%;
 		max-height: 100%;
 		overflow: hidden;
 	}
 }
+
 .aside__link {
-	color: #9197b3;
+	@include flex_block(row, nowrap, start, center, flex-start);
+	padding: .7rem .7rem .7rem 3.1rem;
+	color: $color_gray;
 	font-weight: 500;
-	&:hover {
-		color: inherit;
-		text-decoration: underline;
-	}
+	
 }
+
 .aside__bottom {
 	@include flex_block(row, nowrap, start, center, flex-start);
 }
+
 .aside__avatar {
 	max-width: 2.6rem;
 	max-height: 2.6rem;
-	margin: 0px 0.7rem 0px 0px;
+	margin: 0 .7rem 0 0;
 	& > img {
 		max-width: 100%;
 		max-height: 100%;
 		overflow: hidden;
 	}
 }
+
 .aside__user-info {
-	& > * {
-		line-height: 150%;
-	}
+	line-height: 150%;
 }
+
 .aside__name {
-	letter-spacing: 0.2px;
+	letter-spacing: .2;
 }
+
 .aside__position {
-	font-size: 0.7rem;
+	font-size: .7rem;
 	list-style: none;
 	color: #757575;
 }

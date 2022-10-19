@@ -5,14 +5,14 @@
 	top: 50%;
 	left: 0;
 	width: 100%;
-	height: 0.1rem;
+	height: .1rem;
 	background: $black;
 }
 
 .menu_trigger {
 	z-index: 500;
 	position: absolute;
-	top: 0.6rem;
+	top: .6rem;
 	left: 1rem;
 	display: none; // hidden on wide screens
 	height: 1.1rem;
@@ -20,7 +20,7 @@
 	text-transform: uppercase;
 	color: transparent;
 	cursor: pointer;
-	transition: left 0.6s ease 0.1s;
+	transition: left .6s ease .1s;
 
 	@include bp($point_3) {
 		display: block; // appear on tablets
@@ -32,16 +32,16 @@
 
 	&:before {
 		content: "";
-		transform: translate(0, -0.4rem);
-		transition: all 0.3s ease;
+		transform: translate(0, -.4rem);
+		transition: all .3s ease;
 
 		@include user_menu_butt_line;
 	}
 
 	&:after {
 		content: "";
-		transform: translate(0, 0.4rem);
-		transition: all 0.3s ease;
+		transform: translate(0, .4rem);
+		transition: all .3s ease;
 
 		@include user_menu_butt_line;
 	}
@@ -63,7 +63,7 @@
 }
 
 .menu_trigger_decor {
-	transition: all 0.3s ease;
+	transition: all .3s ease;
 	.active_mod & {
 		opacity: 0;
 		transform: translate(100%, 0);
@@ -73,10 +73,11 @@
 }
 
 .main {
-	padding: 2.6rem 0 0 4.5rem;
+	padding: 2.6rem 2.1rem 0 4.5rem;
+	max-width: calc(90rem - 19.1rem);
 	background-color: $color_light;
 	@include bp($point_1) {
-		padding: 2.5rem 0rem 0rem 0.9rem;
+		padding: 2.5rem 0rem 0rem .9rem;
 	}
 
 	@include bp($point_3) {
@@ -85,9 +86,9 @@
 		right: 0;
 		width: 100%;
 		height: 100%;
-		padding: 1.9rem 0.9rem;
+		padding: 1.9rem .9rem;
 		overflow: auto;
-		transition: all 0.7s ease 0s;
+		transition: all .7s ease 0s;
 	}
 	@include bp($point_6) {
 		padding: 1.8rem 0;
@@ -115,16 +116,26 @@
 	background-color: $white;
 	border-radius: 1.88rem;
 	margin: 0 0 7rem 0;
+	max-width: 53.2rem;
 	overflow: hidden;
 	@include bp($point_1) {
-		padding: 1.7rem 0.9rem 2.5rem 0.9rem;
+		padding: 1.7rem .9rem 2.5rem .9rem;
+	}
+	@include bp($point_2) {
+		max-width: 40rem;
+	}
+	@include bp($point_3) {
+		max-width: calc(100vw - 3.6rem);
+	}
+	@include bp($point_6) {
+		max-width: calc(100vw - 1.8rem);
 	}
 }
 
 .main__top {
 	font-size: 1.4rem;
 	@include flex_block(row, nowrap, space-between, center, flex-start);
-	margin: 0 0 0.9rem 0;
+	margin: 0 0 .9rem 0;
 	@include bp($point_1) {
 		font-size: 1.1rem;
 	}
@@ -137,13 +148,19 @@
 .main__customers {
 	font-size: 1em;
 	font-weight: 600;
-	margin: 0 0 0.3em 0;
+	margin: 0 0 .3em 0;
+	@include bp($point_7) {
+		font-size: .9rem;
+	}
 }
 
 .main__members {
-	font-size: 0.9rem;
+	font-size: .9rem;
 	font-weight: 400;
 	color: #16c098;
+	@include bp($point_7) {
+		font-size: .7rem;
+	}
 }
 
 .main__form {
@@ -157,11 +174,11 @@
 
 .form_input__element {
 	@include flex_block(row, nowrap, start, center, flex-start);
-	padding: 0.3rem 1.8rem;
+	padding: .3rem 1.8rem;
 	background-color: #f9fbff;
-	border-radius: 0.6rem;
+	border-radius: .6rem;
 	color: $color_decor;
-	font-size: 0.7rem;
+	font-size: .7rem;
 	line-height: 150%;
 	max-height: 2.4rem;
 	border: none;
@@ -170,15 +187,15 @@
 	}
 	@include bp($point_1) {
 		max-width: 8.8rem;
-		padding: 0.3rem 1rem 0.3rem 1.8rem;
+		padding: .3rem 1rem .3rem 1.8rem;
 	}
 }
 
 .main__button {
 	@extend %btn_size_1;
 	position: absolute;
-	top: 0.3rem;
-	left: 0.2rem;
+	top: .3rem;
+	left: .2rem;
 	cursor: pointer;
 	& > svg {
 		max-width: 100%;
@@ -189,27 +206,26 @@
 
 .main__users {
 	margin: 0 0 2.3rem 0;
-	@include bp($point_2) {
-		overflow: auto;
+	@include bp($point_1) {	
+		overflow: auto;	
 	}
 }
 
 .main__user {
 	display: grid;
-	column-gap: 0.2rem;
 	grid-template-columns:
-		minmax(7.8rem, 9.5rem) minmax(4.7rem, 7.8rem) minmax(6.9rem, 9.4rem) minmax(1.2rem, 11.9rem) minmax(6.1rem, 8.4rem)
+		minmax(7.8rem, 9.5rem) minmax(4.7rem, 7.8rem) minmax(6.9rem, 9.4rem) minmax(11.2rem, 11.9rem) minmax(6.1rem, 8.4rem)
 		minmax(3.7rem, 1fr);
 	padding: 1.2rem 0;
+	column-gap: .2rem;
 	position: relative;
-
 	&::after {
 		content: "";
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 0.1rem;
+		height: .1rem;
 		background-color: $color_back;
 	}
 	& > * {
@@ -218,10 +234,17 @@
 		line-height: 150%;
 		white-space: nowrap;
 	}
-	@include bp($point_1) {
-		column-gap: 0.2rem;
-		margin: 0 -0.9rem 0 -0.9rem;
-		padding: 1.2rem 0.9rem 1.2rem 0.9rem;
+	@include bp($point_1) {	
+		margin: 0 -.9rem 0 -.9rem;
+		padding: 1.2rem .9rem 1.2rem .9rem;
+	}
+	@include bp($point_2) {	
+		grid-template-columns: 8rem 5rem 7rem 11.2rem 6.2rem 3.8rem;
+		column-gap: .6rem;
+		&::after {
+			content: "";
+			width: 45rem;
+		}
 	}
 }
 
@@ -243,7 +266,7 @@
 
 .main__user--headline {
 	margin: 0 -2.7rem 0 -2.2rem;
-	padding: 0 2.7rem 0.9rem 2.2rem;
+	padding: 0 2.7rem .9rem 2.2rem;
 	& > * {
 		color: $color_decor;
 		font-weight: 400;
@@ -254,8 +277,8 @@
 		text-decoration: none;
 	}
 	@include bp($point_1) {
-		margin: 0 -0.9rem 0 -0.9rem;
-		padding: 1.2rem 0.9rem 1.2rem 0.9rem;
+		margin: 0 -.9rem 0 -.9rem;
+		padding: 1.2rem .9rem 1.2rem .9rem;
 	}
 }
 
@@ -264,20 +287,20 @@
 	@include flex_block(row, nowrap, center, center, flex-start);
 	width: 100%;
 	flex: 1 1 auto;
-	border-radius: 0.2rem;
+	border-radius: .2rem;
 }
 
 .main__status--active {
-	padding: 0.1rem 0.1rem;
+	padding: .1rem .1rem;
 	color: $color_status_active;
-	border: 1 solid $color_status_active;
-	background-color: rgba(22, 192, 152, 0.38);
+	border: .1rem solid $color_status_active;
+	background-color: rgba(22, 192, 152, .38);
 }
 
 .main__status--inactive {
-	padding: 0.2rem 0.1rem;
+	padding: .2rem .1rem;
 	color: $color_status_inactive;
-	border: 1 solid $color_status_inactive;
+	border: .1rem solid $color_status_inactive;
 	background-color: rgba(255, 197, 197, 1);
 }
 
@@ -285,10 +308,10 @@
 	padding: 0 2.5rem 0 2.4rem;
 	@include flex_block(row, nowrap, space-between, center, flex-start);
 	@include bp($point_1) {
-		padding: 0 0.9rem;
+		padding: 0 .9rem;
 	}
 	@include bp($point_4) {
-		padding: 0 0.9rem;
+		padding: 0 .9rem;
 		justify-content: center;
 	}
 }
@@ -313,12 +336,12 @@
 	color: #404b52;
 	max-height: 1.5rem;
 	background-color: #f5f5f5;
-	padding: 0.3rem 0.6rem;
-	font-size: 0.7rem;
-	border-radius: 0.3rem;
+	padding: .3rem .6rem;
+	font-size: .7rem;
+	border-radius: .3rem;
 
 	&:first-child {
-		margin: 0 0.6rem 0 0;
+		margin: 0 .6rem 0 0;
 	}
 
 	&:last-child {
@@ -329,7 +352,7 @@
 .main__pagination-items {
 	@include flex_block(row, nowrap, start, center, flex-start);
 	& > * {
-		margin: 0 0.6rem 0 0;
+		margin: 0 .6rem 0 0;
 	}
 }
 
@@ -339,10 +362,10 @@
 	color: #404b52;
 	background-color: #f5f5f5;
 	font-weight: 500;
-	padding: 0.3rem 0.6rem;
-	font-size: 0.7rem;
-	border-radius: 0.3rem;
-	transition: all 0.3s ease 0s;
+	padding: .3rem .6rem;
+	font-size: .7rem;
+	border-radius: .3rem;
+	transition: all .3s ease 0s;
 
 	&.active {
 		background-color: #5932ea;

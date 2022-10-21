@@ -31,8 +31,8 @@
   <body>
     <div class="preloader"></div>
     <div class="wrapper">
-      <div class="container">
-        <div class="row">
+      <section class="section">
+        <div class="section__in">
           <aside class="aside"> 
             <div class="aside__top">
               <div class="aside__logo"><a href="#">
@@ -44,7 +44,7 @@
             <div class="aside__body">
               <nav class="aside__navigation"> 
                 <ul class="aside__list">
-                  <li> 
+                  <li class="aside__item">
                     <div class="aside__img"> 
                       <svg class="icon icon_key-square ">
                         <use xlink:href="images/sprite/sprite.svg#key-square"></use>
@@ -54,7 +54,7 @@
                       <use xlink:href="images/sprite/sprite.svg#arrow-right"></use>
                     </svg>
                   </li>
-                  <li> 
+                  <li class="aside__item">
                     <div class="aside__img"> 
                       <svg class="icon icon_3d-square ">
                         <use xlink:href="images/sprite/sprite.svg#3d-square"></use>
@@ -64,7 +64,7 @@
                       <use xlink:href="images/sprite/sprite.svg#arrow-right"></use>
                     </svg>
                   </li>
-                  <li> 
+                  <li class="aside__item">
                     <div class="aside__img"> 
                       <svg class="icon icon_user-square ">
                         <use xlink:href="images/sprite/sprite.svg#user-square"></use>
@@ -74,7 +74,7 @@
                       <use xlink:href="images/sprite/sprite.svg#arrow-right"></use>
                     </svg>
                   </li>
-                  <li> 
+                  <li class="aside__item">
                     <div class="aside__img"> 
                       <svg class="icon icon_wallet-money ">
                         <use xlink:href="images/sprite/sprite.svg#wallet-money"></use>
@@ -84,7 +84,7 @@
                       <use xlink:href="images/sprite/sprite.svg#arrow-right"></use>
                     </svg>
                   </li>
-                  <li> 
+                  <li class="aside__item">
                     <div class="aside__img"> 
                       <svg class="icon icon_discount-shape ">
                         <use xlink:href="images/sprite/sprite.svg#discount-shape"></use>
@@ -94,7 +94,7 @@
                       <use xlink:href="images/sprite/sprite.svg#arrow-right"></use>
                     </svg>
                   </li>
-                  <li> 
+                  <li class="aside__item">
                     <div class="aside__img"> 
                       <svg class="icon icon_message-question ">
                         <use xlink:href="images/sprite/sprite.svg#message-question"></use>
@@ -151,49 +151,49 @@
                     <div class="main__name">Jane Cooper</div>
                     <div class="main__company">Microsoft</div><a class="main__phone" href="tel:(225) 555-0118">(225) 555-0118</a><a class="main__email" href="mailto:jane@microsoft.com">jane@microsoft.com</a>
                     <div class="main__country">United States</div>
-                    <div class="main__status main__status--active">Active</div>
+                    <div class="main__status">Active</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Floyd Miles</div>
                     <div class="main__company">Yahoo</div><a class="main__phone" href="tel:(205) 555-0100">(205) 555-0100</a><a class="main__email" href="mailto:floyd@yahoo.com">floyd@yahoo.com</a>
                     <div class="main__country">Kiribati</div>
-                    <div class="main__status main__status--inactive">Inactive</div>
+                    <div class="main__status main__status--adornment">Inactive</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Ronald Richards</div>
                     <div class="main__company">Adobe</div><a class="main__phone" href="tel:(302) 555-0107">(302) 555-0107</a><a class="main__email" href="mailto:ronald@adobe.com">ronald@adobe.com</a>
                     <div class="main__country">Israel</div>
-                    <div class="main__status main__status--inactive">Inactive</div>
+                    <div class="main__status main__status--adornment">Inactive</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Marvin McKinney</div>
                     <div class="main__company">Tesla</div><a class="main__phone" href="tel:(252) 555-0126">(252) 555-0126</a><a class="main__email" href="mailto:marvin@tesla.com">marvin@tesla.com</a>
                     <div class="main__country">Iran</div>
-                    <div class="main__status main__status--active">Active</div>
+                    <div class="main__status">Active</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Jerome Bell</div>
                     <div class="main__company">Google</div><a class="main__phone" href="tel:(629) 555-0129">(629) 555-0129</a><a class="main__email" href="mailto:jerome@google.com">jerome@google.com</a>
                     <div class="main__country">Réunion</div>
-                    <div class="main__status main__status--active">Active</div>
+                    <div class="main__status">Active</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Kathryn Murphy</div>
                     <div class="main__company">Microsoft</div><a class="main__phone" href="tel:(406) 555-0120">(406) 555-0120</a><a class="main__email" href="mailto:kathryn@microsoft.com">kathryn@microsoft.com</a>
                     <div class="main__country">Curaçao</div>
-                    <div class="main__status main__status--active">Active</div>
+                    <div class="main__status">Active</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Jacob Jones</div>
                     <div class="main__company">Yahoo</div><a class="main__phone" href="tel:(208) 555-0112">(208) 555-0112</a><a class="main__email" href="mailto:jacob@yahoo.com">jacob@yahoo.com</a>
                     <div class="main__country">Brazil</div>
-                    <div class="main__status main__status--active">Active</div>
+                    <div class="main__status">Active</div>
                   </div>
                   <div class="main__user">
                     <div class="main__name">Kristin Watsons</div>
                     <div class="main__company">Facebook</div><a class="main__phone" href="tel:(704) 555-0127">(704) 555-0127</a><a class="main__email" href="mailto:kristin@facebook.com">kristin@facebook.com</a>
                     <div class="main__country">Åland Islands</div>
-                    <div class="main__status main__status--inactive">Inactive</div>
+                    <div class="main__status main__status--adornment">Inactive</div>
                   </div>
                 </div>
                 <div class="main__bottom">
@@ -208,7 +208,7 @@
             </div>
           </main>
         </div>
-      </div>
+      </section>
     </div>
   <script defer src="js/app.js"></script></body>
 </html>

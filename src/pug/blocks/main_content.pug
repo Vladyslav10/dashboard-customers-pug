@@ -6,6 +6,7 @@
 				phone: '(225) 555-0118',
 				status: 'Active',
 				country: 'United States',
+				isActive: true,
 				company: 'Microsoft'
 			},
 			{
@@ -14,6 +15,7 @@
 				phone: '(205) 555-0100',
 				status: 'Inactive',
 				country: 'Kiribati',
+				isActive: false,
 				company: 'Yahoo'
 			},
 			{
@@ -22,6 +24,7 @@
 				phone: '(302) 555-0107',
 				status: 'Inactive',
 				country: 'Israel',
+				isActive: false,
 				company: 'Adobe'
 			},
 			{
@@ -30,6 +33,7 @@
 				phone: '(252) 555-0126',
 				status: 'Active',
 				country: 'Iran',
+				isActive: true,
 				company: 'Tesla'
 			},
 			{
@@ -38,6 +42,7 @@
 				phone: '(629) 555-0129',
 				status: 'Active',
 				country: 'Réunion',
+				isActive: true,
 				company: 'Google'
 			},
 			{
@@ -46,6 +51,7 @@
 				phone: '(406) 555-0120',
 				status: 'Active',
 				country: 'Curaçao',
+				isActive: true,
 				company: 'Microsoft'
 			},
 			{
@@ -54,6 +60,7 @@
 				phone: '(208) 555-0112',
 				status: 'Active',
 				country: 'Brazil',
+				isActive: true,
 				company: 'Yahoo'
 			},
 			{
@@ -62,6 +69,7 @@
 				phone: '(704) 555-0127',
 				status: 'Inactive',
 				country: 'Åland Islands',
+				isActive: fals ,
 				company: 'Facebook'
 			},
 		];
@@ -94,7 +102,7 @@
 					a.main__phone(href=`tel:${user.phone}`)= user.phone
 					a.main__email(href=`mailto:${user.email}`)= user.email
 					.main__country= user.country
-					div(class=`main__status main__status--${user.status.toLowerCase()}`)= user.status
+					div(class = user.isActive === true ? 'main__status' : 'main__status main__status--adornment')= user.status
 		.main__bottom
 			p.main__number Showing data 1 to 8 of 256K entries
 			.main__pagination

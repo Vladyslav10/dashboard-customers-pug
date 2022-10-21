@@ -47,7 +47,7 @@
 	}
 
 	&.active_mod {
-		left: 15.2rem;
+		left: 15.5rem;
 		&:before {
 			transform: (rotate(45deg) translate(0, 0));
 		}
@@ -73,11 +73,11 @@
 }
 
 .main {
-	padding: 2.6rem 2.1rem 0 4.5rem;
+	padding: 0 0 0 4.8vw;
 	max-width: calc(90rem - 19.1rem);
 	background-color: $color_light;
 	@include bp($point_1) {
-		padding: 2.5rem 0rem 0rem .9rem;
+		padding: 0 0 0 .9rem;
 	}
 
 	@include bp($point_3) {
@@ -91,7 +91,7 @@
 		transition: all .7s ease 0s;
 	}
 	@include bp($point_6) {
-		padding: 1.8rem 0;
+		padding: 2rem 0 0 0;
 	}
 }
 
@@ -107,7 +107,7 @@
 		font-size: 1.2rem;
 	}
 	@include bp($point_6) {
-		margin: 0 0 2.2em 1rem;
+		margin: 0 0 1rem 1rem;
 	}
 }
 
@@ -115,14 +115,11 @@
 	padding: 1.7rem 2.7rem 2.6rem 2.2rem;
 	background-color: $white;
 	border-radius: 1.88rem;
-	margin: 0 0 7rem 0;
 	max-width: 53.2rem;
 	overflow: hidden;
 	@include bp($point_1) {
 		padding: 1.7rem .9rem 2.5rem .9rem;
-	}
-	@include bp($point_2) {
-		max-width: 40rem;
+		max-width: calc(100vw - 22rem);
 	}
 	@include bp($point_3) {
 		max-width: calc(100vw - 3.6rem);
@@ -214,10 +211,10 @@
 .main__user {
 	display: grid;
 	grid-template-columns:
-		minmax(7.8rem, 9.5rem) minmax(4.7rem, 7.8rem) minmax(6.9rem, 9.4rem) minmax(11.2rem, 11.9rem) minmax(6.1rem, 8.4rem)
-		minmax(3.7rem, 1fr);
+		minmax(8.2rem, 9.5rem) minmax(4.8rem, 7.8rem) minmax(7rem, 9.4rem) minmax(11.2rem, 11.9rem) minmax(6.2rem, 8.4rem)
+		minmax(5rem, 1fr);
 	padding: 1.2rem 0;
-	column-gap: .2rem;
+	column-gap: .4rem;
 	position: relative;
 	&::after {
 		content: "";
@@ -237,15 +234,19 @@
 	@include bp($point_1) {	
 		margin: 0 -.9rem 0 -.9rem;
 		padding: 1.2rem .9rem 1.2rem .9rem;
-	}
-	@include bp($point_2) {	
-		grid-template-columns: 8rem 5rem 7rem 11.2rem 6.2rem 3.8rem;
-		column-gap: .6rem;
+		grid-template-columns: 8.2rem 5rem 7.4rem 11.8rem 6.4rem minmax(5rem, 1fr);
+		column-gap: .8rem;
 		&::after {
 			content: "";
-			width: 45rem;
+			width: 48.6rem;
 		}
 	}
+	@include bp($point_3) {	
+		&::after{
+			display: none;
+		}
+	}
+
 }
 
 .main__phone {
@@ -280,25 +281,28 @@
 		margin: 0 -.9rem 0 -.9rem;
 		padding: 1.2rem .9rem 1.2rem .9rem;
 	}
+	 & > .main__status {
+		display: block;
+		border: none;
+		background-color: transparent;
+		padding: 0;
+		color: $color_decor;
+	 }
 }
 
 .main__status {
 	justify-self: center;
-	@include flex_block(row, nowrap, center, center, flex-start);
+	@include flex_block(row, nowrap, center, center, baseline);
 	width: 100%;
-	flex: 1 1 auto;
+	flex: 1 1 100%;
 	border-radius: .2rem;
-}
-
-.main__status--active {
-	padding: .1rem .1rem;
+	padding: .2rem .1rem;
 	color: $color_status_active;
 	border: .1rem solid $color_status_active;
 	background-color: rgba(22, 192, 152, .38);
 }
 
-.main__status--inactive {
-	padding: .2rem .1rem;
+.main__status--adornment {
 	color: $color_status_inactive;
 	border: .1rem solid $color_status_inactive;
 	background-color: rgba(255, 197, 197, 1);

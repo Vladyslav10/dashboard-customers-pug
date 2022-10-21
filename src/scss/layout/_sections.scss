@@ -3,25 +3,17 @@
 	position: relative;
 
 	width: 100%;
+	padding: 2.2rem 1rem 4.8rem 1rem;
 
 	font-size: 1rem;
 
-	//remove this demo style
-	&.demo_mod {
-		@extend %global_flex_block_row_nowrap_center_center;
-
-		height: calc(100vh - (var(--height-footer) + var(--height-header)));
-
-		font-size: 4rem;
-		color: $white;
-		text-align: center;
-
-		background-color: $black;
-	}
+	background-color: $color_light;
+	
 }
 
-.section_in {
+.section__in {
 	max-width: $page_width;
 	width: 100%;
 	margin: 0 auto;
+	@include flex_block(row, nowrap, flex-start, stretch);
 }

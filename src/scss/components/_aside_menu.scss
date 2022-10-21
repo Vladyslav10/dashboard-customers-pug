@@ -112,11 +112,11 @@
 }
 
 .aside__item > .aside__img {
-	stroke: $color_gray;
+	color: $color_gray;
 }
 
 .aside__item:hover > .aside__img {
-	stroke: $white;
+	color: $white;
 }
 
 .aside__item > svg {
